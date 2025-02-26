@@ -41,26 +41,45 @@ function calculateAreaByCoordinates() {
 
 function generateMinForm() {
     let block3 = document.getElementById('block3');
-    let form = '<p style=" font-size:20px;" >Введіть 10 чисел:</p> ';
+    let form = '<p style="font-size:20px;">Введіть 10 чисел:</p>';
     form += '<div class="input-grid">';
+    
     for (let i = 0; i < 10; i++) {
-        form += `<input style="width: 80px;" type="number" id="num${i}" placeholder="Число ${i + 1}" >`;
+        form += `<input style="width: 80px;" type="text" id="num${i}" placeholder="Число ${i + 1}" 
+                  oninput="validateInput(this)">`;
     }
+    
     form += '</div>';
     form += '<button onclick="findMinCount()">Знайти мінімальні</button>';
     block3.innerHTML = form;
 }
 
+
+function validateInput(input) {
+    input.value = input.value.replace(/[^0-9]/g, ''); 
+}
+
 function findMinCount() {
     let numbers = [];
+    
     for (let i = 0; i < 10; i++) {
-        numbers.push(Number(document.getElementById(`num${i}`).value));
+        let value = document.getElementById(`num${i}`).value;
+        
+        if (value.trim() === "") {
+            alert("Заповніть усі поля!");
+            return; 
+        }
+        
+        numbers.push(Number(value));
     }
+    
     let minVal = Math.min(...numbers);
     let count = numbers.filter(num => num === minVal).length;
+    
     alert(`Кількість мінімальних значень: ${count}`);
     document.cookie = `minCount=${count}; path=/`;
 }
+
 
 window.onload = function () {
     let cookies = document.cookie.split('; ').find(row => row.startsWith('minCount='));
