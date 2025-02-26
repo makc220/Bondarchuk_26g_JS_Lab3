@@ -1,0 +1,105 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+.container {
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows:repeat(4,1fr);
+    width: 600px;
+    height: 600px;
+}
+.block1{
+display:flex;
+align-items: center;
+background: #C6D9F1;
+border: 2px solid #959694;
+justify-content: space-between;
+grid-column: span 4;
+border-bottom: none;
+}
+.block-label1{
+    display: flex;
+    width: 60px;
+    height: 20px;
+    background-color: white;
+    border: 2px solid #959694;
+    padding: 2px 9px;
+    justify-content: flex-end;
+    margin-left: 10px; 
+}
+.block-number {
+    margin-right: 10px; 
+}
+.block2{
+    display:flex;
+    flex-direction: row; 
+    justify-content: flex-end; 
+    align-items: center;
+    border: 2px solid #959694;
+    background: #EAF1DD;
+    grid-column: span 1;
+    grid-row: 2/5;   
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+button {
+    width: 80px;
+    height: 40px; 
+    margin-right: 20px; 
+}
+.block3{
+    display: flex;
+    grid-column: span 2;
+    grid-row: span 2;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #959694;
+    border-left:none;
+    border-right:none;
+    border-bottom: none;
+}
+.block3-blue{
+    display: flex;
+    grid-column: span 3;
+    grid-row: span 2;
+    background-color: #C6D9F1;
+    border: 2px solid #959694;
+    border-left: none;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.block-label2{
+    display: flex;
+    width: 60px;
+    height: 20px;
+    background-color: white;
+    border: 2px solid #959694;
+    padding: 2px 9px;
+    justify-content: flex-end;
+}
+.block4{
+    display: flex;
+    background-color: #EAF1DD;
+    border: 2px solid #959694;
+    align-items: center;
+    padding-left: 10px;
+    margin-bottom: -1px;
+}
+.block5{
+    display: flex;
+    background-color: #FDE9D9;
+    border: 2px solid #959694;
+    align-items: center;
+    padding-left: 10px;
+    border-bottom: none;
+}
